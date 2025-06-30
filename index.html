@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio Profesional</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS Custom Configuration for Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            '900': '#1A202C', // Azul marino muy oscuro para fondos principales (cuerpo, hero)
+                            '800': '#2D3748', // Azul marino un poco más claro para secciones
+                        },
+                        purple: {
+                            '900': '#3F0055', // Morado muy oscuro para la barra de navegación
+                            '800': '#6D28D9', // Morado más oscuro para hover de botones
+                            '700': '#8B5CF6', // Morado vibrante para botones y algunos acentos
+                            '600': '#A78BFA', // Morado para títulos y bordes
+                            '400': '#C4B5FD', // Morado más claro para textos secundarios
+                        },
+                        // Colores de marca para los botones de redes sociales
+                        instagram: {
+                            'default': '#E4405F', // Instagram red/pink
+                            'hover': '#C13584'
+                        },
+                        gmail: {
+                            'default': '#EA4335', // Google red
+                            'hover': '#D72C20'
+                        },
+                        github: {
+                            'default': '#181717', // GitHub black
+                            'hover': '#404040'
+                        },
+                        whatsapp: {
+                            'default': '#25D366', // WhatsApp green
+                            'hover': '#1DA851'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts - Inter (Used for overall typography) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to external custom CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="leading-relaxed bg-navy-900 text-gray-200">
+
+    <!-- Navegación -->
+    <nav class="bg-purple-900 shadow-lg fixed w-full z-10 top-0 rounded-b-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white rounded-md p-2">Los Sin Chamba</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#sobre-mi" class="text-white hover:text-purple-600 transition duration-300 rounded-md p-2">Sobre mí</a>
+                <a href="#proyectos" class="text-white hover:text-purple-600 transition duration-300 rounded-md p-2">Proyectos</a>
+                <a href="#habilidades" class="text-white hover:text-purple-600 transition duration-300 rounded-md p-2">Habilidades</a>
+                <a href="#contacto" class="text-white hover:text-purple-600 transition duration-300 rounded-md p-2">Contacto</a>
+            </div>
+            <!-- Botón de menú para móviles -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Menú móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-800 rounded-b-lg">
+            <a href="#sobre-mi" class="block px-6 py-3 text-white hover:bg-navy-900 transition duration-300">Sobre mí</a>
+            <a href="#proyectos" class="block px-6 py-3 text-white hover:bg-navy-900 transition duration-300">Proyectos</a>
+            <a href="#habilidades" class="block px-6 py-3 text-white hover:bg-navy-900 transition duration-300">Habilidades</a>
+            <a href="#contacto" class="block px-6 py-3 text-white hover:bg-navy-900 transition duration-300">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <header class="bg-navy-900 text-white py-20 md:py-32 flex items-center min-h-screen relative overflow-hidden">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between z-10 pt-16">
+            <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4 text-purple-600 animate-pulse">Hola, soy Kevin Castilla</h1>
+                <p class="text-xl md:text-2xl mb-8">Estudiante de la Tecnicatura Universal en Programacion.</p>
+                <a href="#contacto" class="inline-block bg-purple-700 hover:bg-purple-800 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    Contáctame
+                </a>
+            </div>
+            <div class="md:w-1/2 flex justify-center md:justify-end">
+                <!-- Placeholder para imagen de perfil -->
+                <img src="https://avatars.githubusercontent.com/u/214948889?v=4" alt="Foto de perfil" class="rounded-full shadow-2xl border-4 border-purple-600 transform hover:scale-105 transition-transform duration-300">
+            </div>
+        </div>
+        <!-- Efecto de fondo sutil -->
+        <div class="absolute inset-0 bg-gradient-to-br from-navy-900 via-gray-900 to-purple-900 opacity-20 -z-0"></div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+
+        <!-- Sección Sobre mí -->
+        <section id="sobre-mi" class="mb-16 md:mb-24 bg-navy-800 p-8 rounded-xl shadow-2xl transform hover:scale-[1.01] transition-transform duration-300">
+            <h2 class="text-4xl font-bold text-purple-600 mb-8 text-center">Sobre mí</h2>
+            <div class="text-lg leading-relaxed space-y-4 text-gray-300">
+                <p>
+                    ¡Hola! Soy Kevin Castilla, Estudiante de la Cohorte 2025 de la Tecnicatura Universal en Programacion con una sólida base en Python y Java. Mi pasión es aprender y lograr grandes cosas en la Programacion
+                </p>
+                <p>
+                   Mi objetivo es terminar la cursada y adentrarme en el mundo de la programacion y la tecnologia cada vez aprender mas.
+                </p>
+                
+            </div>
+        </section>
+
+        <!-- Sección Habilidades en Informática -->
+        <section id="habilidades" class="mb-16 md:mb-24 bg-navy-800 p-8 rounded-xl shadow-2xl transform hover:scale-[1.01] transition-transform duration-300">
+            <h2 class="text-4xl font-bold text-purple-600 mb-8 text-center">Habilidades en Informática</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Habilidad 1 -->
+                <div class="bg-navy-900 p-6 rounded-lg shadow-md border border-purple-600 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 mb-4 flex items-center justify-center bg-purple-700 rounded-full">
+                        <svg class="lucide lucide-code w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2 text-purple-400">Lenguajes de Programación</h3>
+                    <p class="text-gray-300">JavaScript, Python, Java</p>
+                </div>
+                <!-- Habilidad 2 -->
+                <div class="bg-navy-900 p-6 rounded-lg shadow-md border border-purple-600 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 mb-4 flex items-center justify-center bg-purple-700 rounded-full">
+                        <svg class="lucide lucide-layout-dashboard w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2 text-purple-400">Utlizacion de IA</h3>
+                    <p class="text-gray-300">Creacion de videos, imagenes, codigos, etc</p>
+                </div>
+                <!-- Habilidad 3 -->
+                <div class="bg-navy-900 p-6 rounded-lg shadow-md border border-purple-600 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 mb-4 flex items-center justify-center bg-purple-700 rounded-full">
+                        <svg class="lucide lucide-database w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12A9 3 0 0 0 21 12"/><path d="M3 19A9 3 0 0 0 21 19"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2 text-purple-400">Automatizacion de IA</h3>
+                    <p class="text-gray-300">Procesos automatizados con Inteligencia Artificial</p>
+                </div>
+                <!-- Habilidad 4 -->
+                <div class="bg-navy-900 p-6 rounded-lg shadow-md border border-purple-600 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 mb-4 flex items-center justify-center bg-purple-700 rounded-full">
+                        <svg class="lucide lucide-cloud w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M17.5 19H18a3.5 3.5 0 0 0 0-7h-.5A2.5 2.5 0 0 1 15 9.5a3.5 3.5 0 0 0-7.7-1.5 3.5 3.5 0 0 0-1.7 6.2H5a3.5 3.5 0 0 0 0 7H17.5a.5.5 0 0 0 0-1Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2 text-purple-400">Cloud & DevOps</h3>
+                    <p class="text-gray-300">Todo lo que es Git</p>
+                </div>
+                <!-- Habilidad 5 -->
+                <div class="bg-navy-900 p-6 rounded-lg shadow-md border border-purple-600 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 mb-4 flex items-center justify-center bg-purple-700 rounded-full">
+                        <svg class="lucide lucide-figma w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H5V5.5z"/><path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"/><path d="M12 12.5A3.5 3.5 0 1 1 15.5 16H12v-3.5z"/><path d="M12 16h3.5a3.5 3.5 0 1 1 0 7H12v-7z"/><path d="M5 12.5A3.5 3.5 0 0 1 8.5 16H12v-3.5H5v-3.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2 text-purple-400">Diseño y UX/UI</h3>
+                    <p class="text-gray-300">Figma, Adobe XD (conceptos básicos), Responsive Design</p>
+                </div>
+                <!-- Habilidad 6 -->
+                <div class="bg-navy-900 p-6 rounded-lg shadow-md border border-purple-600 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 mb-4 flex items-center justify-center bg-purple-700 rounded-full">
+                        <svg class="lucide lucide-terminal w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M4 17l6-6-6-6M12 19h8"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2 text-purple-400">Otros</h3>
+                    <p class="text-gray-300">APIs RESTful, Metodologías Ágiles (Scrum), Resolución de Problemas</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Mis Proyectos -->
+        <section id="proyectos" class="mb-16 md:mb-24 bg-navy-800 p-8 rounded-xl shadow-2xl transform hover:scale-[1.01] transition-transform duration-300">
+            <h2 class="text-4xl font-bold text-purple-600 mb-8 text-center">Mis Proyectos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Proyecto 1 -->
+                <div class="bg-navy-900 p-6 rounded-lg shadow-md border border-purple-600">
+                    <img src="https://placehold.co/600x400/2D3748/ffffff?text=Proyecto+1" alt="Proyecto 1" class="rounded-md mb-4 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold mb-2 text-purple-400">Python</h3>
+                    <p class="text-gray-300 mb-4">Aqui esta todo lo visto de Python en la TUP.</p>
+                    <a href="https://drive.google.com/drive/u/1/folders/1OW0TsYT1pSJPuaRYgUMLD36JM8mz3IHP" target="_blank" class="text-purple-600 hover:underline flex items-center">
+                        Ver Proyecto
+                        <svg class="lucide lucide-external-link ml-2 w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/>
+                        </svg>
+                    </a>
+                </div>
+                <!-- Proyecto 2 -->
+                <div class="bg-navy-900 p-6 rounded-lg shadow-md border border-purple-600">
+                    <img src="https://placehold.co/600x400/2D3748/ffffff?text=Proyecto+2" alt="Proyecto 2" class="rounded-md mb-4 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold mb-2 text-purple-400">Java</h3>
+                    <p class="text-gray-300 mb-4">Aqui esta todo lo visto de Java en la TUP</p>
+                    <a href="#" target="_blank" class="text-purple-600 hover:underline flex items-center">
+                        Ver Proyecto
+                        <svg class="lucide lucide-external-link ml-2 w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/>
+                        </svg>
+                    </a>
+                </div>
+                <!-- Proyecto 3 -->
+                <div class="bg-navy-900 p-6 rounded-lg shadow-md border border-purple-600">
+                    <img src="https://placehold.co/600x400/2D3748/ffffff?text=Proyecto+3" alt="Proyecto 3" class="rounded-md mb-4 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold mb-2 text-purple-400">JavaScript</h3>
+                    <p class="text-gray-300 mb-4">Aqui esta todo lo visto de JavaScript en la TUP</p>
+                    <a href="#" target="_blank" class="text-purple-600 hover:underline flex items-center">
+                        Ver Proyecto
+                        <svg class="lucide lucide-external-link ml-2 w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Redes Sociales / Contacto -->
+        <section id="contacto" class="bg-navy-800 p-8 rounded-xl shadow-2xl transform hover:scale-[1.01] transition-transform duration-300">
+            <h2 class="text-4xl font-bold text-purple-600 mb-8 text-center">¡Contactate conmigo!</h2>
+            <p class="text-center text-lg mb-8 text-gray-300">Enviame un DM por las siguientes plataformas:</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/castillakevin_/" target="_blank" class="group flex items-center bg-instagram-default hover:bg-instagram-hover text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    Instagram
+                </a>
+                <!-- Gmail -->
+                <a href="mailto:kevinrasgido73@gmail.com" class="group flex items-center bg-gmail-default hover:bg-gmail-hover text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    Gmail
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/kevincastilla4050" target="_blank" class="group flex items-center bg-github-default hover:bg-github-hover text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    GitHub
+                </a>
+                <!-- WhatsApp -->
+                <a href="https://wa.me/+5492604563314" target="_blank" class="group flex items-center bg-whatsapp-default hover:bg-whatsapp-hover text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    WhatsApp
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-purple-900 text-white text-center py-6 mt-12 rounded-t-lg">
+        <p>&copy; 2025 Kevin Castilla. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Lógica para el menú móvil
+        document.getElementById('mobile-menu-button').onclick = function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        };
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Cierra el menú móvil si está abierto
+                if (!document.getElementById('mobile-menu').classList.contains('hidden')) {
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
